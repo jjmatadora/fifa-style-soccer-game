@@ -2,39 +2,49 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-dark: #071910;
+  --bg-mid: #0b2818;
+  --panel: rgba(4, 25, 16, 0.8);
+  --line: rgba(255, 255, 255, 0.18);
+  --text: #f5f7f8;
+  --muted: rgba(255, 255, 255, 0.72);
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at top, rgba(53, 143, 84, 0.4), transparent 40%),
-    linear-gradient(180deg, #0a2015, #071a10 40%, #0b1d15);
+    radial-gradient(circle at top, rgba(96, 181, 116, 0.35), transparent 30%),
+    linear-gradient(180deg, var(--bg-mid), var(--bg-dark));
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
 }
 
 .game-shell {
-  width: min(96vw, 1000px);
+  width: min(96vw, 1120px);
 }
 
 .hud {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 18px;
-  background: rgba(3, 25, 15, 0.78);
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  gap: 18px;
+  padding: 14px 22px;
+  background: var(--panel);
+  border: 2px solid var(--line);
   border-bottom: none;
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
 }
 
 .team {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 180px;
+  gap: 14px;
+  width: 220px;
   font-weight: 700;
 }
 
@@ -43,69 +53,80 @@ body {
 }
 
 .team-name {
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
+  font-size: 1.08rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .score {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   line-height: 1;
-  color: #f7f7f7;
-  text-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
 }
 
 .center-panel {
   text-align: center;
+  flex: 1;
 }
 
 #timer {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
 
-.controls {
-  margin-top: 4px;
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
+.status {
+  margin-top: 5px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted);
+}
+
+.controls {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.76);
 }
 
 canvas {
   display: block;
   width: 100%;
   height: auto;
-  background: linear-gradient(180deg, #45a64f, #2c8e43 50%, #2a833e 100%);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, #49b761, #2f944d 52%, #298a46);
+  border: 2px solid var(--line);
   border-top: none;
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.24);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .hud {
-    padding: 12px 10px;
+    padding: 10px 12px;
+    gap: 10px;
   }
 
   .team {
-    width: 120px;
+    width: 130px;
   }
 
   .team-name {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
   }
 
   .score {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   #timer {
     font-size: 1.2rem;
   }
 
+  .status,
   .controls {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 }

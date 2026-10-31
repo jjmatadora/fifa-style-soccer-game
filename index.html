@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FIFA Style Football</title>
+    <title>Ultimate Football Arena</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,17 +13,20 @@
           <span class="team-name">Home</span>
           <span id="score-home" class="score">0</span>
         </div>
+
         <div class="center-panel">
           <div id="timer">90:00</div>
-          <div class="controls">WASD Move · Space Shoot · Shift Sprint</div>
+          <div id="status" class="status">Kickoff</div>
+          <div class="controls">WASD Move · Shift Sprint · Space Shoot · E Pass</div>
         </div>
+
         <div class="team team-right">
           <span id="score-away" class="score">0</span>
           <span class="team-name">Away</span>
         </div>
       </div>
 
-      <canvas id="gameCanvas" width="960" height="540" aria-label="Soccer game field"></canvas>
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Football game field"></canvas>
     </div>
 
     <script src="game.js"></script>
