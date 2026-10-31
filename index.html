@@ -7,23 +7,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="stadium-glow"></div>
-    <div class="game-shell">
+    <div class="page-backdrop"></div>
+
+    <div id="menuScreen" class="menu-screen">
+      <div class="menu-panel">
+        <div class="menu-header">
+          <p class="eyebrow">Football Simulation</p>
+          <h1>Ultimate Football Arena</h1>
+        </div>
+
+        <div class="selection-block">
+          <div class="selection-header">
+            <span>Home Team</span>
+            <span id="homeTeamName">Manchester City</span>
+          </div>
+          <div id="homeTeamPicker" class="team-picker"></div>
+        </div>
+
+        <div class="selection-block">
+          <div class="selection-header">
+            <span>Away Team</span>
+            <span id="awayTeamName">Real Madrid</span>
+          </div>
+          <div id="awayTeamPicker" class="team-picker"></div>
+        </div>
+
+        <button id="startMatchBtn" class="start-btn">Start Match</button>
+      </div>
+    </div>
+
+    <div id="gameShell" class="game-shell hidden">
       <div class="hud">
         <div class="team team-left">
-          <span class="team-name">Home</span>
+          <span class="team-name" id="homeLabel">Home</span>
           <span id="score-home" class="score">0</span>
         </div>
 
         <div class="center-panel">
           <div id="timer">90:00</div>
           <div id="status" class="status">Kickoff</div>
-          <div class="controls">WASD Move · Shift Sprint · Space Shoot · E Pass</div>
+          <div class="stats-row">
+            <div class="mini-stat"><span>Poss.</span><strong id="possessionValue">50%</strong></div>
+            <div class="mini-stat"><span>Press</span><strong id="pressValue">High</strong></div>
+            <div class="mini-stat"><span>Stamina</span><strong id="staminaValue">100%</strong></div>
+          </div>
+          <div class="controls">WASD Move · Shift Sprint · Space Shoot · E Pass · P Reset</div>
         </div>
 
         <div class="team team-right">
           <span id="score-away" class="score">0</span>
-          <span class="team-name">Away</span>
+          <span class="team-name" id="awayLabel">Away</span>
         </div>
       </div>
 
